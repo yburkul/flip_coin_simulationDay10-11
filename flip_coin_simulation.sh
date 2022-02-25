@@ -6,7 +6,7 @@ tail=0
 head=1
 head_count=0
 tail_count=0
-for(( i=1 ; i<=100 ; i++ ))
+while(( head_count!=21 && tail_count!=21))
 do
 result=$((RANDOM%2))
 
@@ -20,5 +20,9 @@ else
 fi
 done
 
-echo "Number of time head win: " $head_count
-echo "Number of time tail win: " $tail_count
+if (($head_count==21))
+then
+     echo "Number of time head win: " $head_count "by" $tail_count
+else
+     echo "Number of time tail win: " $tail_count "by" $head_count
+fi
