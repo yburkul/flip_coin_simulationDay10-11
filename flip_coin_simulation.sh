@@ -13,10 +13,11 @@ result=$((RANDOM%2))
 if (($result==1))
 then
     ((head_count++))
-    echo "winner" = $head
+elif ((head_count==tail_count))
+then
+     echo "game is continues" $head_count=$tail_count
 else
     ((tail_count++))
-    echo "loser" = $tail
 fi
 done
 
